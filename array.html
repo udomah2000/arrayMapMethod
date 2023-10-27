@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+        }
+        .product{
+            padding:3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+
+        }
+        .product-cover{
+            grid-gap: 2rem;
+            padding: 0 1.5rem 1rem 1.5rem;
+        }
+        .product .product-details{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            padding: 1.2rem;
+
+        }
+        .product img{
+            width: 100%;
+        }
+        .product .price{
+            color: aquamarine;
+            font-size: 18px;
+
+        }
+        .product span a{
+            color: tomato;
+            font-size: 20px;
+            text-transform: capitalize;
+            text-decoration: none;
+            border: 1px tomato solid;
+            padding: .4rem 5rem;
+            display:inline-flex;
+            
+        }
+        .product .text{
+            margin-bottom: 1rem;
+
+        }
+        .product span,span a{
+            text-align: center;
+        }
+        @media screen  and (max-width:650px){
+            .product{
+            padding:3rem;
+            display: grid;
+            grid-template-columns: auto;
+
+
+
+        }
+
+        }
+        @media screen  and (min-width:700px){
+            .product{
+            padding:3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+
+        }
+
+        }
+        @media screen  and (min-width:750px){
+            .product{
+            padding:3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+
+        }
+
+        }
+    </style>
+
+    <div class="product">
+        <!-- All items are syored here -->
+    </div>
+    
+    <script>
+        let productItem = document.querySelector('.product')
+        let arrayList = [
+            {
+                img: "./1.jpg",
+                price: 70,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+                name: "buy",
+            },
+            {
+                img: "./2.jpg",
+                price: 90,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+
+                name: "buy",
+            },
+            {
+                img: "./3.jpg",
+                price: 45,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+
+                name: "buy",
+                
+            },
+            {
+                img: "./4.jpg",
+                price: 85,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+                name: "buy",
+            },
+            {
+                img: "./clothes-1.jpg",
+                price: 60,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+                name: "buy",
+            },
+            {
+                img: "./clothes-2.jpg",
+                price: 110,
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestiae, temporibus dignissimos repellat atque magni ipsa dicta minima, id, ratione odit. Facere veniam dolore, doloremque ut nesciunt aut saepe id!",
+                name: "buy",
+            }
+        ];
+
+
+        const myProduct = () => {
+            let display = ""
+            for (let items of arrayList) {
+
+                display += `
+                <div class="product-cover">
+                <img src=${items.img} alt=""  height="250">
+                <div class="product-details">
+                <p class="price">$${items.price}</p>
+                <p class="text">${items.text}</p>
+                <span><a href="">${items.name}</a></span>
+                </div>
+                </div>
+                `
+                productItem.innerHTML = display
+
+            }
+console.log(display)
+        }
+        myProduct()
+    </script>
+</body>
+
+</html>
